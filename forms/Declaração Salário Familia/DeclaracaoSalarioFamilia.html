@@ -1,0 +1,507 @@
+<html>
+  <head>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="assets/style-guide/css/fluig-style-guide.min.css"
+    />
+    <link type="text/css" rel="stylesheet" href="estilo.css" />
+
+    <script
+      type="text/javascript"
+      src="assets/portal/resources/js/jquery/jquery.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="assets/portal/resources/js/jquery/jquery-ui.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="assets/portal/resources/js/mustache/mustache-min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="assets/style-guide/js/fluig-style-guide.min.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="jquery.mask.min.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="DeclaracaoSalarioFamilia.js"
+      charset="utf-8"
+    ></script>
+  </head>
+  <body>
+    <div class="fluig-style-guide">
+      <form name="form" role="form">
+        <div class="container">
+          <center>
+            <div class="page-header">
+              <h1 class="headerForm">Declaração De Salário Familia - Termo de Responsabilidade</h1>
+            </div>
+          </center>
+
+          <input
+            name="txt_coligada"
+            id="txt_coligada"
+            class="form-control"
+            type="hidden"
+          />
+
+          <div class="row">
+            <div class="col-md-12">
+              <fieldset class="custom-fieldset">
+                <legend>
+                  <i class="flaticon flaticon-card-user"></i>
+                  <span>Dados Pessoais</span>
+                </legend>
+
+                <div class="row">
+                  <div class="form-group col-md-2">
+                    <label class="control-label">Matricula</label
+                    ><input
+                      name="txt_matricula"
+                      id="txt_matricula"
+                      class="form-control"
+                      type="text"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label class="control-label">Admissão</label
+                    ><input
+                      class="form-control"
+                      type="text"
+                      name="dt_admissao"
+                      id="dt_admissao"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="control-label">Nome</label
+                    ><input
+                      class="form-control"
+                      type="text"
+                      name="txt_nome"
+                      id="txt_nome"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label class="control-label">CPF</label
+                    ><input
+                      class="form-control"
+                      type="text"
+                      name="cpf_func"
+                      id="cpf_func"
+                      readonly
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-2">
+                    <label class="control-label">Data Nascimento</label
+                    ><input
+                      class="form-control"
+                      type="text"
+                      name="dt_nascimento"
+                      id="dt_nascimento"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label class="control-label">Sexo</label>
+                    <select class="form-control" name="txt_sexo" id="txt_sexo">
+                      <option value=""></option>
+                      <option value="M">Masculino</option>
+                      <option value="F">Feminino</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="control-label">Empresa</label
+                    ><input
+                      class="form-control"
+                      type="text"
+                      name="txt_nome_empresa"
+                      id="txt_nome_empresa"
+                    />
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label class="control-label">Raça/Cor</label>
+
+                    <select
+                      class="form-control"
+                      name="racacor"
+                      id="racacor"
+                      dataset="dsInfoRacaCorRM"
+                      datasetkey="CODIGO"
+                      datasetvalue="DESCRICAO"
+                    ></select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label class="control-label">E-mail Corporativo</label
+                    ><input
+                      class="form-control"
+                      type="text"
+                      name="txt_email_corporativo"
+                      id="txt_email_corporativo"
+                    />
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    <label class="control-label">Departamento</label
+                    ><input
+                      class="form-control"
+                      type="text"
+                      name="txt_departamento"
+                      id="txt_departamento"
+                    />
+                  </div>
+                  
+                </div>
+
+                <div class="row">
+                  <div class="col-md-2 form-group">
+                    <label class="control-label">Nacionalidade</label>
+                    <input
+                      type="hidden"
+                      id="cod_nacionalidade"
+                      name="cod_nacionalidade"
+                    />
+                    <input
+                      type="zoom"
+                      class="form-control"
+                      id="txt_nacionalidade"
+                      name="txt_nacionalidade"
+                      data-zoom="
+													{
+															'displayKey':'DESCRICAO',
+															'datasetId':'dsInfoNacionalidadeRM',
+															
+															'fields':[{
+																		'field':'DESCRICAO',
+																		'label':'Nacionalidade',
+																		'standard':true
+																}]
+													}"
+                    />
+                  </div>
+                  <div class="col-md-1 form-group">
+                    <label class="control-label">UF Nasc.</label>
+                    <select
+                      class="form-control"
+                      name="uf_nascimento"
+                      id="uf_nascimento"
+                      dataset="dsInfoEstadoRM"
+                      datasetkey="UF"
+                      datasetvalue="UF"
+                    ></select>
+                  </div>
+                  <div class="col-md-3 form-group">
+                    <label class="control-label">Cidade Nascimento</label>
+                    <input
+                      type="zoom"
+                      class="form-control"
+                      id="cidade_nascimento"
+                      name="cidade_nascimento"
+                      data-zoom="
+													{
+															'displayKey':'NOMEMUNICIPIO',
+															'datasetId':'dsInfoEstadoMunicipioRM',
+															'filterValues': 'UF,null',
+															'fields':[{
+																		'field':'NOMEMUNICIPIO',
+																		'label':'Cidade',
+																		'standard':true
+																}]
+													}"
+                    />
+                  </div>
+                  <div class="col-md-2 form-group">
+                    <label class="control-label">Estado Civil</label>
+                    <select
+                      class="form-control"
+                      name="txt_estado_civil"
+                      id="txt_estado_civil"
+                      dataset="dsInfoEstadoCivil"
+                      datasetkey="CODIGO"
+                      datasetvalue="DESCRICAO"
+                      addBlankLine="true"
+                    ></select>
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label class="control-label">Grau Instrução</label>
+                    <select
+                      class="form-control"
+                      name="txt_grau_instrucao"
+                      id="txt_grau_instrucao"
+                      dataset="dsInfoGrauInstrucaoRM"
+                      datasetkey="CODIGO"
+                      datasetvalue="DESCRICAO"
+                      addBlankLine="true"
+                    ></select>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <fieldset class="custom-fieldset">
+                <legend>
+                  <i class="flaticon flaticon-card-user"></i>
+                  <span>Termo de Responsabilidade</span>
+                </legend>
+
+              
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p>Pelo presente <strong>TERMO DE RESPONSABILIDADE</strong>, declaro estar ciente de que deverei comunicar de imediato a ocorrência dos seguintes fatos ou ocorrências que determinam a perda do direito ao salário-família:</p>
+                      <ul>
+                          <li>ÓBITO DE FILHO;</li>
+                          <li>CESSAÇÃO DA INVALIDEZ DE FILHO INVÁLIDO;</li>
+                          <li>SENTENÇA JUDICIAL QUE DETERMINE O PAGAMENTO A OUTREM (casos de desquite ou separação, abandono de filhos ou perda do pátrio poder).</li>
+                      </ul>
+                      <p>Estou ciente, ainda, de que a falta de cumprimento ora assumido, além de obrigar à devolução das importâncias recebidas indevidamente, sujeitar-me-á às penalidades previstas no art. 171 do Código Penal e à rescisão do contrato de trabalho, por justa causa, nos termos do art. 482 da Consolidação das Leis do Trabalho.</p>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            
+          </div>
+
+
+          
+          
+          
+          <div class="row">
+            <div class="col-md-12">
+              <fieldset class="custom-fieldset">
+                <legend>
+                  <i class="flaticon flaticon-card-user"></i>
+                  <span>Dados Beneficiários</span>
+                </legend>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table
+                        class="table hide"
+                        tablename="tbDependentes"
+                        addbuttonlabel="Adicionar novo dependente"
+                        nodeletebutton="true"
+                        noaddbutton="true"
+                      >
+                        <thead>
+                          <tr>
+                            <th>Origem RM</th>
+							<th>Número</th>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Nascimento</th>
+                            
+                            <th>Parentesco</th>
+                            <th>Grau de Instrução</th>
+                            
+                          </tr>
+                          
+                        </thead>
+                        <tbody>
+                          
+                          <tr>
+                            <td>
+                              <input
+                                class="form-control"
+                                type="text"
+                                id="origem_rm"
+                                name="origem_rm"
+                                readonly
+                              />
+                            </td>
+							<td>
+								<input
+								  class="form-control"
+								  type="text"
+								  id="num_dependente"
+								  name="num_dependente"
+								  readonly
+								/>
+							  </td>
+                            <td>
+                              <input
+                                class="form-control"
+                                type="text"
+                                id="nome_dependente"
+                                name="nome_dependente"
+                              />
+                            </td>
+                            <td>
+                              <input
+                                class="form-control"
+                                type="text"
+                                id="cpf_dependente"
+                                name="cpf_dependente"
+                              />
+                            </td>
+                            <td>
+                              <input
+                                class="form-control"
+                                type="text"
+                                id="dt_nascimento_dependente"
+                                name="dt_nascimento_dependente"
+                              />
+                            </td>
+                            
+                            <td>
+                              <select
+                                class="form-control"
+                                name="grau_parentesco_dependente"
+                                id="grau_parentesco_dependente"
+                                dataset="dsInfoGrauParentescoRM"
+                                datasetkey="CODIGO"
+                                datasetvalue="DESCRICAO"
+                                addBlankLine="true"
+                              ></select>
+                            </td>
+                            <td>
+                              <select
+                              class="form-control"
+                              name="grau_instrucao_dependente"
+                              id="grau_instrucao_dependente"
+                              dataset="dsInfoGrauInstrucaoRM"
+                              datasetkey="CODIGO"
+                              datasetvalue="DESCRICAO"
+                              addBlankLine="true"
+                            ></select>
+                            </td>
+                           
+                           
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div id="template_dependente" class="col col-md-12"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-2 col-md-offset-10">
+                      <button type="button" id="add_dependente" class="btn btn-boards-primary">
+                        Adicionar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+             
+            
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <fieldset class="custom-fieldset">
+                <legend>
+                  <i class="flaticon flaticon-card-user"></i>
+                  <span>Informações</span>
+                </legend>
+
+              
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h2>Salário Família - Documentos</h2>
+
+    <p>Pode ser solicitado pelo(a) empregado(a) junto à empresa, pelo trabalhador(a) avulso(a) junto ao sindicato ou órgão gestor de mão de obra, mediante a apresentação dos seguintes documentos:</p>
+
+    <h2>Documentação:</h2>
+    <ol>
+        <li>Certidão de Nascimento do filho (original e cópia)*</li>
+        <li>
+            Filho equiparado: Equiparam-se aos filhos, mediante declaração escrita do empregado e comprovação de dependência econômica, o enteado e o menor que esteja sob sua tutela, que não possua bens suficientes para o próprio sustento e educação.
+            <ul>
+                <li>tutelado(a): certidão judicial de tutela e certidão de nascimento;</li>
+                <li>enteado(a): certidão de nascimento do enteado e prova de casamento do(a) segurado(a) com o(a) genitor(a) do enteado por certidão de casamento ou, se união estável, na forma do § 3º, art. 22 do DC nº 3.048/99;</li>
+                <li>declaração de não emancipação do dependente menor de 21 anos;</li>
+                <li>prova de dependência econômica do enteado ou tutelado em relação ao segurado, na forma do § 3º do art. 22 do DC nº 3.048/99.</li>
+            </ul>
+        </li>
+        <li>Atestado de vacinação obrigatória, quando dependente menor de sete anos – deverá ser apresentado em novembro de cada ano, sob pena de suspensão do benefício.</li>
+        <li>Comprovação de frequência escolar do filho ou equiparado, quando dependente maior de sete anos – deverá ser apresentada nos meses de maio e novembro de cada ano, sob pena de suspensão do benefício.</li>
+        <li>Termo de Responsabilidade</li>
+    </ol>
+
+    <p><strong>Obs.:</strong> a verificação da invalidez do filho maior de 14 anos ficará a cargo da Perícia Médica do INSS.</p>
+
+    <h2>Informações complementares</h2>
+    <ol>
+        <li>No caso do menor inválido que não frequenta a escola por motivo de invalidez, deve ser apresentado atestado médico que informe esse fato.</li>
+        <li>Caso não sejam apresentados os documentos comprobatórios de vacinação e frequência escolar nos prazos determinados, o pagamento do salário-família será suspenso, até que a documentação seja apresentada.</li>
+        <li>Não é devido salário-família no período entre a suspensão do benefício, motivada pela falta de comprovação da frequência escolar ou pela falta de atestado de vacinação e o seu reativamento, salvo se provada a frequência escolar regular no período ou apresentado o atestado de vacinação obrigatória, respectivamente.</li>
+        <li>A comprovação de frequência escolar será feita mediante apresentação de documento emitido pela escola, na forma de legislação própria, em nome do aluno, onde conste o registro de frequência regular ou de atestado de estabelecimento de ensino, informando a regularidade da matrícula e frequência escolar do aluno.</li>
+    </ol>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            
+          </div>
+
+          <div class="row divAprovacao">
+            <div class="col-md-12">
+              <fieldset class="custom-fieldset">
+                <legend>
+                  <i class="flaticon flaticon-card-user"></i>
+                  <span>Dados Aprovação</span>
+                </legend>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div
+                        class="custom-radio custom-radio-inline custom-radio-primary"
+                      >
+                        <input
+                          type="radio"
+                          id="dados_aprovado"
+                          name="dados_aprovacao"
+                          value="1"
+                        /><label for="dados_aprovado">Aprovado</label>
+                      </div>
+
+                      <div
+                        class="custom-radio custom-radio-inline custom-radio-primary"
+                      >
+                        <input
+                          type="radio"
+                          id="dados_ajuste"
+                          name="dados_aprovacao"
+                          value="2"
+                        /><label for="dados_ajuste">Ajuste</label>
+                      </div>
+
+                      <div
+                        class="custom-radio custom-radio-inline custom-radio-primary"
+                      >
+                        <input
+                          type="radio"
+                          id="dados_reprovado"
+                          name="dados_aprovacao"
+                          value="3"
+                        /><label for="dados_reprovado">Reprovado</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

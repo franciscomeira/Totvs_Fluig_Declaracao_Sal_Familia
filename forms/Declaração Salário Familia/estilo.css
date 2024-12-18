@@ -1,0 +1,48 @@
+.headerForm {
+        height: 110px!important;
+        line-height: 110px!important;
+        color: white!important;
+        border-radius: 0px 0px 50px 50px!important;
+        background: rgb(0, 138, 192)!important;
+        background: linear-gradient(90deg, rgba(0, 138, 192, 1) 0%, rgba(2, 166, 189, 1) 50%, rgba(1, 192, 181, 1) 100%)!important;
+        text-align: center !important;
+    
+}
+
+.custom-fieldset {
+        border: none!important; /* Remove todas as bordas */
+        border-top: 4px solid #ccc!important; /* Adiciona somente a borda superior */
+        padding: 0px!important;
+        margin: 10px 0!important;
+        border-color: #06b0b9!important;
+}
+
+.custom-fieldset legend {
+        font-size: 1.6em!important;
+        font-weight: bold!important;
+        display: flex!important;
+        align-items: center!important;
+        padding: 0 10px!important;
+        position: relative!important;
+        border-bottom:none!important;
+}
+
+.custom-fieldset legend i {
+        margin-right: 8px!important;
+        font-size: 1.6em!important;
+        color: #06b0b9!important; /* Cor do ícone */
+}
+
+.custom-fieldset legend span {
+        white-space: nowrap!important;
+        color: #06b0b9!important;
+}
+
+/* Cria o traço após o texto */
+.custom-fieldset legend::after {
+        content: ""!important;
+        flex: 1!important;
+        height: 4px!important;
+        background-color: #06b0b9!important;
+        margin-left: 10px!important; /* Espaçamento entre o texto e o traço */
+}    

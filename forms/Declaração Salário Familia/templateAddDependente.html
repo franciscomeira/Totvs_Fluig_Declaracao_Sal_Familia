@@ -1,0 +1,44 @@
+<div class="row">
+  <input class="form-control" type="hidden" id="row_modal" name="row_modal" value="{{row}}" readonly />
+  <input class="form-control" type="hidden" id="origem_rm_modal" name="origem_rm_modal" value="{{origem_rm}}" readonly />
+  <input class="form-control" type="hidden" id="num_dependente_modal" name="num_dependente_modal" value="{{num_dependente}}" readonly />
+
+    <div class="col-md-3 form-group">
+      <label class="control-label">Nome</label>
+      <input class="form-control" type="text" id="nome_dependente_modal" name="nome_dependente_modal" value="{{nome_dependente}}" />
+    </div>
+
+    <div class="col-md-2 form-group">
+      <label class="control-label">CPF</label>
+      <input class="form-control" type="text" id="cpf_dependente_modal" name="cpf_dependente_modal" value="{{cpf_dependente}}" />
+    </div>
+
+    <div class="col-md-2 form-group">
+      <label class="control-label">Data Nascimento</label>
+      <input class="form-control" type="text" id="dt_nascimento_dependente_modal" name="dt_nascimento_dependente_modal" value="{{dt_nascimento_dependente}}" />
+    </div>
+
+
+    <div class="col-md-2 form-group">
+      <label class="control-label">Grau parentesco</label>
+      <select class="form-control" name="grau_parentesco_dependente_modal" id="grau_parentesco_dependente_modal" dataset="dsInfoGrauParentescoRM" datasetkey="CODIGO" datasetvalue="DESCRICAO"></select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 form-group">
+        <label class="control-label fs-display-block" for="grau_instrucao_dependente_modal">Grau Instrução</label>
+        <select
+        class="form-control"
+        name="grau_instrucao_dependente_modal"
+        id="grau_instrucao_dependente_modal"
+        dataset="dsInfoGrauInstrucaoRM"
+        datasetkey="CODIGO"
+        datasetvalue="DESCRICAO"
+        addBlankLine="true"
+      ></select>
+    </div>
+
+
+    
+  </div>
