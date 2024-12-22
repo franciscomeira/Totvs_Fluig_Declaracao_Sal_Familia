@@ -59,7 +59,9 @@ $(function () {
           type: 'danger'
         });
         return;
-      } else if (grau_instrucao_dependente_modal.trim() == '') {
+      } 
+      
+      /* else if (grau_instrucao_dependente_modal.trim() == '') {
         FLUIGC.toast({
           title: 'Validação: ',
           message: 'Grau de Instrução do Dependente é obrigatório!',
@@ -67,6 +69,7 @@ $(function () {
         });
         return;
       }
+      */
       var row = "";
       var new_num_dependente = num_dependente_modal; //Ajudar new_num_dependente no projeto de Recadastramento
       if (rowModal == "") {
