@@ -7,6 +7,7 @@ function enableFields(form) {
     
   } else if (WKNumState == 5) {
     form.setEnabled("dados_aprovacao", true);
+    form.setEnabled("txt_justificativa", true);
   }
 }
 
